@@ -1,6 +1,6 @@
 # 2017-10-01
 # Building financial model with Monte Carlo simulation of outcomes following
-# the blueprint showed by Lars Krojers on his YouTube channel
+# the blueprint showed by Lars Kroijers on his YouTube channel
 
 import numpy
 import random
@@ -27,9 +27,6 @@ def portfolioRun(
         yearlyReturn = [0.005, norm.ppf(random.random(), loc=meanReturn, scale=stdevReturn)]
         yearlyReturns.append(yearlyReturn)
         investmentReturn.append(startOfYear[i] * numpy.dot(assetAllocation, yearlyReturn))
-        #investmentReturn.append(startOfYear[i] * (assetAllocation[0]* yearlyReturns[0] +
-        #                                          assetAllocation[1]* yearlyReturns[1])
-        #                        )
         endOfYear.append(startOfYear[i] + investmentReturn[i])
 
         priorYear = endOfYear[i]
@@ -50,4 +47,4 @@ for i in range(1000):
     endOfYear.append(portfolioRun(meanReturn, stdevReturn, years, initialContribution, growthInAnnualContribution, seedCapital, assetAllocation))
 with open('out.txt', 'w') as f:
     for item in endOfYear:
-        f.write('%s\n'% item)
+	f.write('%s\n'% item)
