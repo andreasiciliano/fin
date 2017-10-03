@@ -1,2 +1,2 @@
 # fin
-Repository of projects and analyses about personal finance and investment theory
+Repository of projects that help me learn about personal finance and investment theory
